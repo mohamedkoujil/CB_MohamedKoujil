@@ -61,10 +61,12 @@ const mostrar = ref(true)
     </ul>
 
     <!-- Mostra missatge segons si l'usuari està logat -->
+    <h2>Mostrar segons logat</h2>
     <p v-if="logat">Benvingut {{ usuari.nom }}</p>
     <p v-else>No logat</p>
 
     <!-- Controla la visibilitat del div amb v-show -->
+    <h2>Mostrar div o no (-vshow)</h2>
     <div v-show="mostrar">Mostrant div</div>
     <button @click="mostrar = !mostrar">Mostrar</button>
   </div>
