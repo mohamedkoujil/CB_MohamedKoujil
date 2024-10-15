@@ -30,13 +30,16 @@ const mostrar = ref(true)
 
 <template>
   <div class="container">
+    <!-- Mostra el valor de num i un botó per incrementar-lo -->
     <h2>Comptador: {{ num }}</h2>
     <button @click="incrementar">Incrementar</button>
 
-    <h2>Exemple reactive</h2>
+    <!-- Mostra el nom de l'usuari i permet canviar-lo -->
+    <h2>Exemple reactiu</h2>
     <p>{{ usuari }}</p>
-    <button @click="incrementarEdat">Canvar usuari</button>
+    <button @click="incrementarEdat">Canviar usuari</button>
 
+    <!-- Mostra una imatge amb esdeveniments de ratolí -->
     <h2>Imatge</h2>
     <img
       @mouseenter="console.log('Entra img')"
@@ -46,24 +49,42 @@ const mostrar = ref(true)
       alt="Imatge"
     />
 
+    <!-- Enllaç bidireccional del text amb v-model -->
     <h2>V-Model</h2>
     <p>{{ title }}</p>
     <input type="text" v-model="title" placeholder="a placeholder" />
 
+    <!-- Llista els productes de l'array -->
     <h2>Array</h2>
     <ul>
       <li v-for="producte in arrayProductos" :key="producte.id">{{ producte.nom }}</li>
     </ul>
 
+    <!-- Mostra missatge segons si l'usuari està logat -->
     <p v-if="logat">Benvingut {{ usuari.nom }}</p>
     <p v-else>No logat</p>
 
+    <!-- Controla la visibilitat del div amb v-show -->
     <div v-show="mostrar">Mostrant div</div>
     <button @click="mostrar = !mostrar">Mostrar</button>
   </div>
 </template>
 
 <style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(240, 214, 176);
+  padding: 1em;
+  border-radius: 0.5em;
+  width: 75%;
+}
+
+.container img {
+  width: 50%;
+}
+
 header {
   line-height: 1.5;
 }
